@@ -5,6 +5,4 @@ data class CountryDTO(
     val name: String,
     val country_code: String,
     val continent: String
-) {
-
-}
+)

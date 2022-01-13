@@ -8,11 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.vixonnen.footballtesttask.R
+import com.vixonnen.footballtesttask.databinding.FragmentSplashBinding
 import com.vixonnen.footballtesttask.di.App
 import com.vixonnen.footballtesttask.presentation.splash_screen.view_model.SplashFragmentViewModel
 import javax.inject.Inject
 
 class SplashFragment : Fragment() {
+
+    private var _binding: FragmentSplashBinding? = null
+    private val mBinding get() = _binding!!
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -28,18 +32,17 @@ class SplashFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_splash, container, false)
+    ): View {
+        _binding = FragmentSplashBinding.inflate(layoutInflater, container, false)
+        return mBinding.root
     }
 
     override fun onStart() {
         super.onStart()
-        viewModel.getMatches()
+        viewModel.getCountry()
     }
 
     companion object {
-        fun newInstance() =
-            SplashFragment()
+        fun newInstance() = SplashFragment()
     }
 }
