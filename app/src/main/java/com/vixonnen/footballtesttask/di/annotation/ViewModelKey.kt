@@ -1,4 +1,4 @@
-package com.vixonnen.footballtesttask.di
+package com.vixonnen.footballtesttask.di.annotation
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

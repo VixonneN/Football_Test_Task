@@ -3,7 +3,7 @@ package com.vixonnen.footballtesttask.data.dto.league
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "result_league")
 data class ResultLeagueDTO(
     @PrimaryKey
     val league_key: String,

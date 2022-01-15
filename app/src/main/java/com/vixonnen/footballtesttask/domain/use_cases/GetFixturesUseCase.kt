@@ -8,6 +8,6 @@ class GetFixturesUseCase @Inject constructor(
     private val repository: FootballNetworkRepository
 ) {
 
-    suspend operator fun invoke(leagueId: String) : DataFixturesEntity =
-        repository.getFixtures(leagueId)
+    suspend operator fun invoke() : DataFixturesEntity =
+        repository.getFixtures()
 }

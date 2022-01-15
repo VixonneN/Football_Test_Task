@@ -11,6 +11,7 @@ data class ResultFixturesEntity(
     val away_team_key: String,
 
     val event_final_result: String,
+    val league_name: String,
     val home_team_logo: String,
     val away_team_logo: String,
     val event_stadium: String

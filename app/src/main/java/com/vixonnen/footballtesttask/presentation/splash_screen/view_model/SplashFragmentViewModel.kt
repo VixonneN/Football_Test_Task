@@ -1,14 +1,12 @@
 package com.vixonnen.footballtesttask.presentation.splash_screen.view_model
 
-import android.content.ContentValues.TAG
-import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vixonnen.footballtesttask.domain.use_cases.GetFixturesUseCase
-import com.vixonnen.footballtesttask.domain.use_cases.GetLeaguesFromDatabase
-import com.vixonnen.footballtesttask.domain.use_cases.GetLeaguesUseCase
-import com.vixonnen.footballtesttask.domain.use_cases.InsertLeaguesUseCase
-import kotlinx.coroutines.delay
+import com.vixonnen.footballtesttask.domain.entity.fixtures.DataFixturesEntity
+import com.vixonnen.footballtesttask.domain.entity.league.DataLeagueEntity
+import com.vixonnen.footballtesttask.domain.use_cases.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,25 +14,32 @@ class SplashFragmentViewModel @Inject constructor(
     private val getLeaguesUseCase: GetLeaguesUseCase,
     private val getFixturesUseCase: GetFixturesUseCase,
     private val insertLeaguesUseCase: InsertLeaguesUseCase,
-    private val getLeaguesFromDatabase: GetLeaguesFromDatabase
+    private val insertFixturesUseCase: InsertFixturesUseCase
 ) : ViewModel() {
+
+    private val _leagues = MutableLiveData<DataLeagueEntity>()
+    val leagues: LiveData<DataLeagueEntity> = _leagues
+
+    private val _fixtures = MutableLiveData<DataFixturesEntity>()
+    val fixtures: LiveData<DataFixturesEntity> = _fixtures
 
     fun getLeagues() {
         viewModelScope.launch {
-            getLeaguesUseCase.invoke()
+            val response = getLeaguesUseCase.invoke()
+            _leagues.value = response
+            response.result.forEach { leagueData ->
+                insertLeaguesUseCase.invoke(leagueData)
+            }
         }
     }
 
     fun getFixtures() {
         viewModelScope.launch {
-            getLeaguesUseCase.invoke().result.forEach {
-                insertLeaguesUseCase.invoke(it)
-                Log.d(TAG, "getFixtures: added $it")
+            val response = getFixturesUseCase.invoke()
+            _fixtures.value = response
+            response.result.forEach { fixturesData ->
+                insertFixturesUseCase.invoke(fixturesData)
             }
-            delay(5000)
-            Log.d(TAG, "getFixtures: ${getLeaguesFromDatabase.invoke()}")
         }
-
     }
-
 }

@@ -1,6 +1,10 @@
 package com.vixonnen.footballtesttask.di
 
 import android.content.Context
+import com.vixonnen.footballtesttask.di.modules.DataModule
+import com.vixonnen.footballtesttask.di.modules.DatabaseModule
+import com.vixonnen.footballtesttask.di.modules.NetworkModule
+import com.vixonnen.footballtesttask.di.modules.ViewModelModule
 import com.vixonnen.footballtesttask.presentation.fixtures_screen.screen.FixturesFragment
 import com.vixonnen.footballtesttask.presentation.league_screen.screen.LeagueFragment
 import com.vixonnen.footballtesttask.presentation.splash_screen.screen.SplashFragment

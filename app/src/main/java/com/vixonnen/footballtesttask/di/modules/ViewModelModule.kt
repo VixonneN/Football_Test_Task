@@ -1,7 +1,8 @@
-package com.vixonnen.footballtesttask.di
+package com.vixonnen.footballtesttask.di.modules
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.vixonnen.footballtesttask.di.annotation.ViewModelKey
 import com.vixonnen.footballtesttask.presentation.fixtures_screen.view_model.FixturesFragmentViewModel
 import com.vixonnen.footballtesttask.presentation.league_screen.view_model.LeagueFragmentViewModel
 import com.vixonnen.footballtesttask.presentation.splash_screen.view_model.SplashFragmentViewModel

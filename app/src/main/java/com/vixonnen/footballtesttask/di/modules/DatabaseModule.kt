@@ -1,4 +1,4 @@
-package com.vixonnen.footballtesttask.di
+package com.vixonnen.footballtesttask.di.modules
 
 import android.content.Context
 import androidx.room.Room

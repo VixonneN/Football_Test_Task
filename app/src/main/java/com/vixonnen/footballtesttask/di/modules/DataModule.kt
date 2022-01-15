@@ -1,4 +1,4 @@
-package com.vixonnen.footballtesttask.di
+package com.vixonnen.footballtesttask.di.modules
 
 import com.vixonnen.footballtesttask.data.repository.FootballDatabaseRepositoryImpl
 import com.vixonnen.footballtesttask.data.repository.FootballNetworkRepositoryImpl

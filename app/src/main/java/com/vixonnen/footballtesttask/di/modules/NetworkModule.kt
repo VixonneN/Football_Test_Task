@@ -1,8 +1,9 @@
-package com.vixonnen.footballtesttask.di
+package com.vixonnen.footballtesttask.di.modules
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.vixonnen.footballtesttask.data.data_source.network.Api
+import com.vixonnen.footballtesttask.di.annotation.ApiBaseUrl
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

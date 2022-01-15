@@ -7,6 +7,6 @@ import com.vixonnen.footballtesttask.domain.entity.league.DataLeagueEntity
 interface FootballNetworkRepository {
 
     suspend fun getLeagues(): DataLeagueEntity
-    suspend fun getFixtures(leagueId: String) : DataFixturesEntity
+    suspend fun getFixtures() : DataFixturesEntity
 
 }

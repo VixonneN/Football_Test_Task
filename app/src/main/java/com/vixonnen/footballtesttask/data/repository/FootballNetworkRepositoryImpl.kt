@@ -18,8 +18,8 @@ class FootballNetworkRepositoryImpl @Inject constructor(
             api.getLeagues().toEntity()
         }
 
-    override suspend fun getFixtures(leagueId: String): DataFixturesEntity =
+    override suspend fun getFixtures(): DataFixturesEntity =
         withContext(Dispatchers.IO) {
-            api.getFixtures(leagueId).toEntity()
+            api.getFixtures().toEntity()
         }
 }

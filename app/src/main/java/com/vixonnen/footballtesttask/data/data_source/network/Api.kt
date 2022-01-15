@@ -10,8 +10,12 @@ interface Api {
     @GET("football/?met=Leagues&APIkey=$API_KEY")
     suspend fun getLeagues(): DataLeagueDTO
 
+//    @GET("football/?met=Fixtures&APIkey=$API_KEY&from=2021-05-03&to=2021-05-18")
+//    suspend fun getFixtures(@Query("leagueId") leagueId: String): DataFixturesDTO
+
     @GET("football/?met=Fixtures&APIkey=$API_KEY&from=2021-05-03&to=2021-05-18")
-    suspend fun getFixtures(@Query("leagueId") leagueId: String): DataFixturesDTO
+    suspend fun getFixtures(): DataFixturesDTO
+
 
     companion object {
         private const val API_KEY =
