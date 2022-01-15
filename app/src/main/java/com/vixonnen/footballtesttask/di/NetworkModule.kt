@@ -2,7 +2,7 @@ package com.vixonnen.footballtesttask.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.vixonnen.footballtesttask.data.network.Api
+import com.vixonnen.footballtesttask.data.data_source.network.Api
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

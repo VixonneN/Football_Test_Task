@@ -5,7 +5,7 @@ import com.vixonnen.footballtesttask.data.dto.league.ResultLeagueDTO
 import com.vixonnen.footballtesttask.domain.entity.league.DataLeagueEntity
 import com.vixonnen.footballtesttask.domain.entity.league.ResultLeagueEntity
 
-fun DataLeagueDTO.toEntity() : DataLeagueEntity =
+fun DataLeagueDTO.toEntity(): DataLeagueEntity =
     DataLeagueEntity(
         success,
         result.map {
@@ -13,5 +13,18 @@ fun DataLeagueDTO.toEntity() : DataLeagueEntity =
         }
     )
 
-fun ResultLeagueDTO.toEntity() : ResultLeagueEntity =
-    ResultLeagueEntity(league_key, league_name, country_key, country_name, league_logo, country_logo)
+fun ResultLeagueDTO.toEntity(): ResultLeagueEntity =
+    ResultLeagueEntity(league_key,
+        league_name,
+        country_key,
+        country_name,
+        league_logo,
+        country_logo)
+
+fun List<ResultLeagueDTO>.toEntity(): List<ResultLeagueEntity> =
+    map {
+        it.toEntity()
+    }
+
+fun ResultLeagueEntity.toDTO(): ResultLeagueDTO =
+    ResultLeagueDTO(league_key, league_name, country_key, country_name, league_logo, country_logo)

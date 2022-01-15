@@ -1,7 +1,7 @@
 package com.vixonnen.footballtesttask.data.repository
 
 import com.vixonnen.footballtesttask.data.mappers.toEntity
-import com.vixonnen.footballtesttask.data.network.Api
+import com.vixonnen.footballtesttask.data.data_source.network.Api
 import com.vixonnen.footballtesttask.domain.entity.fixtures.DataFixturesEntity
 import com.vixonnen.footballtesttask.domain.entity.league.DataLeagueEntity
 import com.vixonnen.footballtesttask.domain.repository.FootballNetworkRepository
