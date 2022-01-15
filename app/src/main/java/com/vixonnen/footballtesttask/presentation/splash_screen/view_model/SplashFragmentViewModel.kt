@@ -2,41 +2,26 @@ package com.vixonnen.footballtesttask.presentation.splash_screen.view_model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vixonnen.footballtesttask.domain.use_cases.GetAllLeaguesUseCase
-import com.vixonnen.footballtesttask.domain.use_cases.GetCountryUseCase
-import com.vixonnen.footballtesttask.domain.use_cases.GetMatchesUseCase
-import com.vixonnen.footballtesttask.domain.use_cases.GetSeasonUseCase
+import com.vixonnen.footballtesttask.domain.use_cases.GetFixturesUseCase
+import com.vixonnen.footballtesttask.domain.use_cases.GetLeaguesUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class SplashFragmentViewModel @Inject constructor(
-    private val getAllLeaguesUseCase: GetAllLeaguesUseCase,
-    private val getMatchesUseCase: GetMatchesUseCase,
-    private val getSeasonUseCase: GetSeasonUseCase,
-    private val getCountryUseCase: GetCountryUseCase
+    private val getLeaguesUseCase: GetLeaguesUseCase,
+    private val getFixturesUseCase: GetFixturesUseCase,
 ) : ViewModel() {
 
-    fun getAllLeagues() {
+    fun getLeagues() {
         viewModelScope.launch {
-            getAllLeaguesUseCase.invoke()
+            getLeaguesUseCase.invoke()
         }
     }
 
-    fun getMatches() {
+    fun getFixtures() {
         viewModelScope.launch {
-            getMatchesUseCase.invoke()
+            getFixturesUseCase.invoke("177")
         }
     }
 
-    fun getSeason() {
-        viewModelScope.launch {
-            getSeasonUseCase.invoke()
-        }
-    }
-
-    fun getCountry() {
-        viewModelScope.launch {
-            getCountryUseCase.invoke()
-        }
-    }
 }

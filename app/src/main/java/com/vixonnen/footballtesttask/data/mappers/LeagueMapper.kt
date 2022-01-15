@@ -1,22 +1,17 @@
 package com.vixonnen.footballtesttask.data.mappers
 
-import com.vixonnen.footballtesttask.data.dto.league.DataDTO
-import com.vixonnen.footballtesttask.data.dto.league.LeaguesDTO
-import com.vixonnen.footballtesttask.data.dto.league.QueryDTO
-import com.vixonnen.footballtesttask.domain.entity.league.DataEntity
-import com.vixonnen.footballtesttask.domain.entity.league.LeagueEntity
-import com.vixonnen.footballtesttask.domain.entity.league.QueryEntity
+import com.vixonnen.footballtesttask.data.dto.league.DataLeagueDTO
+import com.vixonnen.footballtesttask.data.dto.league.ResultLeagueDTO
+import com.vixonnen.footballtesttask.domain.entity.league.DataLeagueEntity
+import com.vixonnen.footballtesttask.domain.entity.league.ResultLeagueEntity
 
-fun DataDTO.toDataEntity() : DataEntity =
-    DataEntity(
-        query.toQueryEntity(),
-        data.map {
-            it.toLeaguesEntity()
+fun DataLeagueDTO.toEntity() : DataLeagueEntity =
+    DataLeagueEntity(
+        success,
+        result.map {
+            it.toEntity()
         }
     )
 
-fun LeaguesDTO.toLeaguesEntity() : LeagueEntity =
-    LeagueEntity(league_id, country_id, name)
-
-fun QueryDTO.toQueryEntity() : QueryEntity =
-    QueryEntity(apikey)
+fun ResultLeagueDTO.toEntity() : ResultLeagueEntity =
+    ResultLeagueEntity(league_key, league_name, country_key, country_name, league_logo, country_logo)

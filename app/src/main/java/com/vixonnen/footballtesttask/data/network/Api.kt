@@ -1,28 +1,21 @@
 package com.vixonnen.footballtesttask.data.network
 
-import com.vixonnen.footballtesttask.data.dto.countries.DataCountriesDTO
-import com.vixonnen.footballtesttask.data.dto.league.DataDTO
-import com.vixonnen.footballtesttask.data.dto.matches.DataMatchesDTO
-import com.vixonnen.footballtesttask.data.dto.seasons.DataSeasonsDTO
-import com.vixonnen.footballtesttask.domain.entity.seasons.DataSeasonsEntity
+import com.vixonnen.footballtesttask.data.dto.fixtures.DataFixturesDTO
+import com.vixonnen.footballtesttask.data.dto.league.DataLeagueDTO
+import com.vixonnen.footballtesttask.data.network.Api.Companion.API_KEY
 import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface Api {
 
-    @GET("soccer/countries?apikey=$API_KEY&continent=$CONTINENT")
-    suspend fun getCountries() : DataCountriesDTO
+    @GET("football/?met=Leagues&APIkey=$API_KEY")
+    suspend fun getLeagues() : DataLeagueDTO
 
-    @GET("soccer/leagues?apikey=$API_KEY")
-    suspend fun getAllLeagues() : DataDTO
-
-    @GET("soccer/matches?apikey=$API_KEY&season_id=496&date_from=2020-09-19")
-    suspend fun getMatches() : DataMatchesDTO
-
-    @GET("soccer/season?apikey=$API_KEY&league_id=314")
-    suspend fun getSeason() : DataSeasonsDTO
+    @GET("football/?met=Fixtures&APIkey=$API_KEY&from=2021-05-03&to=2021-05-18")
+    suspend fun getFixtures(@Query("leagueId") leagueId: String) : DataFixturesDTO
 
     companion object {
-        private const val API_KEY = "141c4c20-730b-11ec-9e72-ad22df84b10c"
-        private const val CONTINENT = "Europe"
+        private const val API_KEY = "e3e1c29e1d2d739ba5c0fe632b96f3bfcf3aba00aa4350cadda296548e1eeeba"
     }
 }

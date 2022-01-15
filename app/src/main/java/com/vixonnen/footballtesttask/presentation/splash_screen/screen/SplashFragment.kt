@@ -39,7 +39,7 @@ class SplashFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        viewModel.getCountry()
+        viewModel.getFixtures()
     }
 
     companion object {
