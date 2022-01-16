@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Sergey/AndroidStudioProjects/FootballTestTask/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
-        <entry key="..\:/Users/Sergey/AndroidStudioProjects/FootballTestTask/app/src/main/res/layout/fragment_splash.xml" value="0.15172101449275363" />
+        <entry key="..\:/Users/Sergey/AndroidStudioProjects/FootballTestTask/app/src/main/res/layout/fragment_fixtures.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/Sergey/AndroidStudioProjects/FootballTestTask/app/src/main/res/layout/fragment_league.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Sergey/AndroidStudioProjects/FootballTestTask/app/src/main/res/layout/fragment_splash.xml" value="0.22" />
+        <entry key="..\:/Users/Sergey/AndroidStudioProjects/FootballTestTask/app/src/main/res/layout/item_fragment_league.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Sergey/AndroidStudioProjects/FootballTestTask/app/src/main/res/layout/item_fragment_splash.xml" value="0.27291666666666664" />
       </map>
     </option>

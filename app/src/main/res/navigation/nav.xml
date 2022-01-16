@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav.xml"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.vixonnen.footballtesttask.presentation.splash_screen.screen.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_leagueFragment"
+            app:destination="@id/leagueFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leagueFragment"
+        android:name="com.vixonnen.footballtesttask.presentation.league_screen.screen.LeagueFragment"
+        android:label="fragment_league"
+        tools:layout="@layout/fragment_league" >
+        <action
+            android:id="@+id/action_leagueFragment_to_fixturesFragment"
+            app:destination="@id/fixturesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fixturesFragment"
+        android:name="com.vixonnen.footballtesttask.presentation.fixtures_screen.screen.FixturesFragment"
+        android:label="fragment_fixtures"
+        tools:layout="@layout/fragment_fixtures" />
+</navigation>

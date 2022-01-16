@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.vixonnen.footballtesttask.R
 import com.vixonnen.footballtesttask.databinding.FragmentSplashBinding
 import com.vixonnen.footballtesttask.di.App
@@ -39,10 +42,23 @@ class SplashFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        viewModel.getLeagues()
         viewModel.getFixtures()
+        showToasts()
+        mBinding.btnToNext.setOnClickListener {
+            navigation().navigate(R.id.action_splashFragment_to_leagueFragment)
+        }
     }
 
-    companion object {
-        fun newInstance() = SplashFragment()
+    private fun showToasts() {
+        viewModel.leagues.observe(viewLifecycleOwner) {
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+        }
+        viewModel.fixtures.observe(viewLifecycleOwner) {
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+        }
     }
+
+    private fun navigation(): NavController =
+        Navigation.findNavController(requireActivity(), R.id.fragment_container_view)
 }

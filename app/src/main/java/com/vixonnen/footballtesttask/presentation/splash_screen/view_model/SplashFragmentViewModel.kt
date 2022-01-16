@@ -17,29 +17,30 @@ class SplashFragmentViewModel @Inject constructor(
     private val insertFixturesUseCase: InsertFixturesUseCase
 ) : ViewModel() {
 
-    private val _leagues = MutableLiveData<DataLeagueEntity>()
-    val leagues: LiveData<DataLeagueEntity> = _leagues
+    private val _leagues = MutableLiveData<String>()
+    val leagues: LiveData<String> = _leagues
 
-    private val _fixtures = MutableLiveData<DataFixturesEntity>()
-    val fixtures: LiveData<DataFixturesEntity> = _fixtures
+    private val _fixtures = MutableLiveData<String>()
+    val fixtures: LiveData<String> = _fixtures
 
     fun getLeagues() {
         viewModelScope.launch {
             val response = getLeaguesUseCase.invoke()
-            _leagues.value = response
+
             response.result.forEach { leagueData ->
                 insertLeaguesUseCase.invoke(leagueData)
             }
+            _leagues.value = "Лиги загружены"
         }
     }
 
     fun getFixtures() {
         viewModelScope.launch {
             val response = getFixturesUseCase.invoke()
-            _fixtures.value = response
             response.result.forEach { fixturesData ->
                 insertFixturesUseCase.invoke(fixturesData)
             }
+            _fixtures.value = "События загружены"
         }
     }
 }
