@@ -64,6 +64,9 @@ class SplashFragment : Fragment() {
         viewModel.fixtures.observe(viewLifecycleOwner) {
             Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
         }
+        viewModel.exception.observe(viewLifecycleOwner) {
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun navigation(): NavController =

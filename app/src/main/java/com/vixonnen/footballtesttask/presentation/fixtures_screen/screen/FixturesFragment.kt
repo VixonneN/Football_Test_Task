@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.vixonnen.footballtesttask.R
 import com.vixonnen.footballtesttask.databinding.FragmentFixturesBinding
@@ -48,6 +49,13 @@ class FixturesFragment : Fragment() {
         super.onStart()
         viewModel.getFixtures(leagueName)
         initializeRecyclerData()
+        checkException()
+    }
+
+    private fun checkException() {
+        viewModel.exception.observe(viewLifecycleOwner) {
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initializeRecyclerData(){
