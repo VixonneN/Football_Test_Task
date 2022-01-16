@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-android-extensions'
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 }
 
 android {
@@ -41,6 +42,9 @@ dependencies {
     def room_version = "2.4.1"
     def glide_version = "4.12.0"
     def nav_version = "2.3.5"
+
+    //OneSignal
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
 
     // navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"

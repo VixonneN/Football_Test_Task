@@ -7,6 +7,7 @@ import com.vixonnen.footballtesttask.di.modules.NetworkModule
 import com.vixonnen.footballtesttask.di.modules.ViewModelModule
 import com.vixonnen.footballtesttask.presentation.fixtures_screen.screen.FixturesFragment
 import com.vixonnen.footballtesttask.presentation.league_screen.screen.LeagueFragment
+import com.vixonnen.footballtesttask.presentation.one_signal_screen.screen.OneSignalFragment
 import com.vixonnen.footballtesttask.presentation.splash_screen.screen.SplashFragment
 import dagger.BindsInstance
 import dagger.Component
@@ -29,4 +30,5 @@ interface AppComponent {
     fun inject(fragment: SplashFragment)
     fun inject(fragment: LeagueFragment)
     fun inject(fragment: FixturesFragment)
+    fun inject(fragment: OneSignalFragment)
 }

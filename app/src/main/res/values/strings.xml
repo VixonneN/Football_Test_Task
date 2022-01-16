@@ -3,4 +3,10 @@
     <string name="choiсe_league">Выберите лигу</string>
     <string name="loading">Загрузка</string>
     <string name="nullCD">null</string>
+    <string name="show_match">Просмотр матчей</string>
+    <string name="webview">К браузеру</string>
+    <string name="football_text_task">Приложение Football Text Task содержит
+        матчи, которые прошли с 3 мая 2021 года по 18 мая 2021 года в пределах
+        того, что было доступно в API. Так же в этом приложении есть браузер.
+    </string>
 </resources>

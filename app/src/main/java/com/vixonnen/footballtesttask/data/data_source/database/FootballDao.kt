@@ -24,4 +24,10 @@ interface FootballDao {
 
     @Query("select * from result_fixtures where league_name = :leagueName")
     suspend fun getFixturesByLeague(leagueName: String) : List<ResultFixturesDTO>
+
+    @Query("select count(*) from result_league")
+    suspend fun checkLeaguesForData() : Int
+
+    @Query("select count(*) from result_fixtures")
+    suspend fun checkFixturesForData() : Int
 }

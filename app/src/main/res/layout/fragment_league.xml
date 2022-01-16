@@ -11,11 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/choiсe_league"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_20sp"
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/layout_margin_10dp"
+        android:layout_marginStart="@dimen/layout_margin_10dp"
+        android:layout_marginEnd="@dimen/layout_margin_10dp"
         />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -28,6 +31,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_fragment_league"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginStart="@dimen/layout_margin_10dp"
+        android:layout_marginEnd="@dimen/layout_margin_10dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

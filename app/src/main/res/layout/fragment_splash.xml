@@ -13,9 +13,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/loading"
+        android:text="@string/football_text_task"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_20sp"
+        android:layout_marginStart="@dimen/layout_margin_10dp"
+        android:layout_marginTop="@dimen/layout_margin_10dp"
+        android:layout_marginEnd="@dimen/layout_margin_10dp"
         />
 
     <Button
@@ -26,7 +29,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/show_match"
         />
 
+    <Button
+        android:id="@+id/btn_to_web_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_to_next"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/webview"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

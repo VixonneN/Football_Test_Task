@@ -39,4 +39,14 @@ class FootballDatabaseRepositoryImpl @Inject constructor(
         withContext(Dispatchers.IO) {
             database.footballDao.getFixturesByLeague(leagueName).toEntity()
         }
+
+    override suspend fun checkLeagueForData(): Int =
+        withContext(Dispatchers.IO) {
+            database.footballDao.checkLeaguesForData()
+        }
+
+    override suspend fun checkFixturesForData(): Int =
+        withContext(Dispatchers.IO) {
+            database.footballDao.checkFixturesForData()
+        }
 }

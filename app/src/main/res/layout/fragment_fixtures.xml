@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.fixtures_screen.screen.FixturesFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fixtures_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_fragment_fixtures"
+        android:layout_marginStart="@dimen/layout_margin_10dp"
+        android:layout_marginEnd="@dimen/layout_margin_10dp"
+        />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

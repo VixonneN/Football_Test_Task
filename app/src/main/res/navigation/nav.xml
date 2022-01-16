@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_splashFragment_to_leagueFragment"
             app:destination="@id/leagueFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_oneSignalFragment"
+            app:destination="@id/oneSignalFragment" />
     </fragment>
     <fragment
         android:id="@+id/leagueFragment"
@@ -28,4 +31,9 @@
         android:name="com.vixonnen.footballtesttask.presentation.fixtures_screen.screen.FixturesFragment"
         android:label="fragment_fixtures"
         tools:layout="@layout/fragment_fixtures" />
+    <fragment
+        android:id="@+id/oneSignalFragment"
+        android:name="com.vixonnen.footballtesttask.presentation.one_signal_screen.screen.OneSignalFragment"
+        android:label="fragment_one_signal"
+        tools:layout="@layout/fragment_one_signal" />
 </navigation>

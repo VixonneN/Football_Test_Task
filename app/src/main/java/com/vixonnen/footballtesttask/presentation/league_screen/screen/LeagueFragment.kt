@@ -1,14 +1,11 @@
 package com.vixonnen.footballtesttask.presentation.league_screen.screen
 
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -17,7 +14,6 @@ import com.vixonnen.footballtesttask.databinding.FragmentLeagueBinding
 import com.vixonnen.footballtesttask.di.App
 import com.vixonnen.footballtesttask.presentation.league_screen.screen.recycler_view.LeagueAdapter
 import com.vixonnen.footballtesttask.presentation.league_screen.view_model.LeagueFragmentViewModel
-import com.vixonnen.footballtesttask.presentation.splash_screen.view_model.SplashFragmentViewModel
 import javax.inject.Inject
 
 class LeagueFragment : Fragment() {
@@ -42,7 +38,6 @@ class LeagueFragment : Fragment() {
         (requireActivity().application as App).appComponent.inject(this)
         viewModel =
             ViewModelProvider(this, viewModelFactory)[LeagueFragmentViewModel::class.java]
-
     }
 
     override fun onStart() {

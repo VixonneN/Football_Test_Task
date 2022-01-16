@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.vixonnen.footballtesttask.di.annotation.ViewModelKey
 import com.vixonnen.footballtesttask.presentation.fixtures_screen.view_model.FixturesFragmentViewModel
 import com.vixonnen.footballtesttask.presentation.league_screen.view_model.LeagueFragmentViewModel
+import com.vixonnen.footballtesttask.presentation.one_signal_screen.view_model.OneSignalFragmentViewModel
 import com.vixonnen.footballtesttask.presentation.splash_screen.view_model.SplashFragmentViewModel
 import com.vixonnen.footballtesttask.presentation.view_model_factory.ViewModelFactory
 import dagger.Binds
@@ -38,4 +39,9 @@ interface ViewModelModule {
     @ViewModelKey(LeagueFragmentViewModel::class)
     fun bindLeagueViewModel(viewModel: LeagueFragmentViewModel): ViewModel
 
+    @Binds
+    @IntoMap
+    @Singleton
+    @ViewModelKey(OneSignalFragmentViewModel::class)
+    fun bindOneSignalViewModel(viewModel: OneSignalFragmentViewModel): ViewModel
 }

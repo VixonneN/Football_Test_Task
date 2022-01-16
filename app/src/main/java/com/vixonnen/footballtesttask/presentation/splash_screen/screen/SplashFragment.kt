@@ -45,8 +45,15 @@ class SplashFragment : Fragment() {
         viewModel.getLeagues()
         viewModel.getFixtures()
         showToasts()
+        initializeButtons()
+    }
+
+    private fun initializeButtons() {
         mBinding.btnToNext.setOnClickListener {
             navigation().navigate(R.id.action_splashFragment_to_leagueFragment)
+        }
+        mBinding.btnToWebView.setOnClickListener {
+            navigation().navigate(R.id.action_splashFragment_to_oneSignalFragment)
         }
     }
 

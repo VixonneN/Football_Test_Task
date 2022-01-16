@@ -8,9 +8,7 @@
     android:name="androidx.navigation.fragment.NavHostFragment"
     app:defaultNavHost="true"
     app:navGraph="@navigation/nav"
-
     tools:context=".MainActivity"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="FragmentTagUsage">
 </fragment>
